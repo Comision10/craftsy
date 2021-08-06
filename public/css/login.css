@@ -2,42 +2,6 @@
     margin: 0 auto;
 }
 
-.login .formulario{
-    width: 320px;
-    margin: 0 auto;
-    margin-top: 60px;
-    padding: 10px;
-}
-
-.login h2{
-    margin: 30px 0;
-    text-align: center;
-}
-
-.login .box-form{
-    display: flex;
-    flex-direction: column;
-    margin: 20px 0;
-}
-
-.login label{
-    margin: 10px 0;
-}
-
-.login input{
-    padding: 5px;
-}
-
-.login .box-check{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.login .box-check label{
-    margin-left: 5px;
-}
-
 .login .box-error{
     margin: 20px 0
 }
@@ -46,16 +10,8 @@
     color: red;
 }
 
-.login button{
-    background-color: #3c8bbc;
-    padding: 10px;
-    width: 100px;
-    border: none;
-    border-radius: 10px;
-    color: #ffffff;
-}
 
-.login button:hover{
-    background-color: #7cb8d5;
-    cursor: pointer;
+
+.login .box-check{
+    justify-content: flex-end;
 }
