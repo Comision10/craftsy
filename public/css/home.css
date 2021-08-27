@@ -23,7 +23,6 @@
 }
 .home main section.productos{
     width: 800px;
-    background-color: #ffffff;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -32,24 +31,47 @@
 .home main section.productos article{
     width: 380px;
     margin: 10px 0 20px;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #acd8e6;
+    position: relative;
+    transition: all .5s ease;
+
 }
 
-.home main section.productos article img{
+.home main section.productos article:hover{
+    box-shadow: 5px 5px 5px silver;
+    transform: scale(1.02);
+}
+
+.home main section.productos article img.img-producto{
     width: 100%;
+}
+
+.home main section.productos article img.img-sticker{
+    position: absolute;
+    top: 0;
+    left: 20px;
 }
 
 .home main section.productos article h4{
     margin: 10px 0;
 } 
 
-.home main section.productos article a{
+.home main section.productos article a.btn-comprar{
     background-color: #ef4c27;
     color: #ffffff;
     text-transform: uppercase;
     padding: 10px;
     display: inline-block;
     margin-top: 20px;
-} 
+    transition: all .5s ease;
+}
+
+.home main section.productos article a.btn-comprar:hover{
+    background-color: tomato;
+}
+
 
 .home main aside{
     width: 320px;
