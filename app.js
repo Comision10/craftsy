@@ -3,14 +3,25 @@ const app = express();
 const path = require('path');
 const port = 3030;
 
+/* recursos estáticos */
 app.use(express.static('public'));
 
+/* controladores */
+const {index,admin} = require('./controllers/mainController');
+const {register,login} = require('./controllers/usersController');
+const {detail,add} = require('./controllers/productsController');
 
-app.get('/', (req,res) => res.sendFile(path.join(__dirname, 'views','index.html')));
-app.get('/detail',(req,res) => res.sendFile(path.join(__dirname, 'views','productDetail.html')))
-app.get('/login', (req,res) => res.sendFile(path.join(__dirname, 'views','login.html')));
-app.get('/register', (req,res) => res.sendFile(path.join(__dirname, 'views','register.html')));
-app.get('/admin',(req,res) => res.sendFile(path.join(__dirname, 'views', 'admin', 'index.html')));
-app.get('/admin/productAdd',(req,res) => res.sendFile(path.join(__dirname, 'views', 'admin', 'productAdd.html')));
+
+app.get('/', index);
+app.get('/admin',admin);
+
+app.get('/products/detail',detail);
+app.get('/products/add',add);
+
+app.get('/users/login',login);
+app.get('/users/register',register);
+
+
+
 
 app.listen(port, () => console.log('Server running in port ' + port))
