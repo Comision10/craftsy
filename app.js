@@ -6,22 +6,15 @@ const port = 3030;
 /* recursos estáticos */
 app.use(express.static('public'));
 
-/* controladores */
-const {index,admin} = require('./controllers/mainController');
-const {register,login} = require('./controllers/usersController');
-const {detail,add} = require('./controllers/productsController');
+/* rutas */
+const mainRouter = require('./routes/main');
+const productsRouter = require('./routes/products');
+const userRouter = require('./routes/users');
 
 
-app.get('/', index);
-app.get('/admin',admin);
-
-app.get('/products/detail',detail);
-app.get('/products/add',add);
-
-app.get('/users/login',login);
-app.get('/users/register',register);
-
-
+app.use('/',mainRouter);
+app.use('/products',productsRouter);
+app.use('/users',userRouter);
 
 
 app.listen(port, () => console.log('Server running in port ' + port))
